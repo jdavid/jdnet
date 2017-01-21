@@ -37,6 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Wagtail
+	'modelcluster',
+	'taggit',
+	'wagtail.wagtailforms',
+	'wagtail.wagtailredirects',
+	'wagtail.wagtailembeds',
+	'wagtail.wagtailsites',
+	'wagtail.wagtailusers',
+	'wagtail.wagtailsnippets',
+	'wagtail.wagtaildocs',
+	'wagtail.wagtailimages',
+	'wagtail.wagtailsearch',
+	'wagtail.wagtailadmin',
+	'wagtail.wagtailcore',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +61,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	# Wagtail
+	'wagtail.wagtailcore.middleware.SiteMiddleware',
+	'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -127,3 +144,8 @@ from socket import getfqdn
 ADMINS = ()
 MANAGERS = ADMINS
 SERVER_EMAIL = 'root@' + getfqdn()
+
+#
+# Wagtail
+#
+WAGTAIL_SITE_NAME = 'J. David Ibáñez'

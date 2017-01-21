@@ -6,6 +6,9 @@ Django==1.10.4
 django-crispy-forms==1.6.1
 django-sendfile==0.3.11
 
+# Wagtail
+wagtail==1.8
+
 {% if django_database.engine == 'postgres' %}
 psycopg2==2.6.2
 {% endif %}
