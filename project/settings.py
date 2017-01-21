@@ -37,20 +37,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # for comments
     # Wagtail
-	'modelcluster',
-	'taggit',
-	'wagtail.wagtailforms',
-	'wagtail.wagtailredirects',
-	'wagtail.wagtailembeds',
-	'wagtail.wagtailsites',
-	'wagtail.wagtailusers',
-	'wagtail.wagtailsnippets',
-	'wagtail.wagtaildocs',
-	'wagtail.wagtailimages',
-	'wagtail.wagtailsearch',
-	'wagtail.wagtailadmin',
-	'wagtail.wagtailcore',
+    'modelcluster',
+    'taggit',
+    'wagtail.wagtailforms',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailusers',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtaildocs',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+    # Wagtail blog
+    'blog',
+    'django_comments',
+    'django_comments_xtd',
 ]
 
 MIDDLEWARE = [
@@ -61,9 +66,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	# Wagtail
-	'wagtail.wagtailcore.middleware.SiteMiddleware',
-	'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+    # Wagtail
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -146,6 +151,14 @@ MANAGERS = ADMINS
 SERVER_EMAIL = 'root@' + getfqdn()
 
 #
+# Sites (required for comments)
+#
+SITE_ID = 1
+
+#
 # Wagtail
 #
 WAGTAIL_SITE_NAME = 'J. David Ibáñez'
+COMMENTS_APP = 'django_comments_xtd'
+COMMENTS_XTD_MAX_THREAD_LEVEL = 0
+COMMENTS_XTD_CONFIRM_EMAIL = True
