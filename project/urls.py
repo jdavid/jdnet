@@ -23,11 +23,11 @@ from wagtail.wagtailcore import urls as wagtail_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # Wagtail
-    url(r'^cms/', include(wagtailadmin_urls)),
-    url(r'^documents/', include(wagtaildocs_urls)),
-    url(r'^pages/', include(wagtail_urls)),
     # Wagtail blog
     url(r'^blog/', include('blog.urls', namespace="blog")),
     url(r'^comments/', include('django_comments_xtd.urls')),
+    # Wagtail
+    url(r'^cms/', include(wagtailadmin_urls)),
+    url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^', include(wagtail_urls)),
 ]
