@@ -1,0 +1,19 @@
+{% load  static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <!-- Bootstrap -->
+  <link href="{% static 'vendor/bootstrap-3.3.7/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-3.3.7/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+  <script src="{% static 'vendor/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  {% block content %}
+  {% endblock %}
+</body>
+
+</html>
