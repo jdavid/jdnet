@@ -5,18 +5,30 @@
  */
 $screen-md-min: 768px;
 
+body { margin: 0 }
 
-/*
- * Navbar
- */
-.navbar-brand img {
-    width: 35%;
+.flex-grid {
+    display: flex;
+}
+.col {
+    flex: 1;
 }
 
-body { padding-top: 100px; }
+#sidebar {
+    flex: 0 0 12em;
+    background-color: #ddd;
+    padding-top: 1em;
+}
+#content {
+}
 
-@media (min-width: $screen-md-min) {
-    .navbar-nav > li > a {
-        line-height: 50px;
+#logo {
+    display: flex;
+    justify-content: center;
+    a {
+        width: 70%;
+        img {
+            width: 100%;
+        }
     }
 }
