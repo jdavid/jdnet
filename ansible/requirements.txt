@@ -6,6 +6,10 @@ Django==1.10.4
 django-crispy-forms==1.6.1
 django-sendfile==0.3.11
 
+# Assets
+django-compressor==2.1
+django-libsass==0.7
+
 # Wagtail
 wagtail==1.8
 -e git+https://github.com/thelabnyc/wagtail_blog.git@8f55273#egg=wagtail-blog

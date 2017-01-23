@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites', # for comments
+    # Assets
+    'compressor',
     # Wagtail
     'modelcluster',
     'taggit',
@@ -159,6 +161,20 @@ SERVER_EMAIL = 'root@' + getfqdn()
 # Sites (required for comments)
 #
 SITE_ID = 1
+
+#
+# Assets
+#
+STATICFILES_FINDERS = [
+    # Default
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # Extra
+    'compressor.finders.CompressorFinder',
+]
+COMPRESS_PRECOMPILERS = [
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+]
 
 #
 # Wagtail

@@ -1,0 +1,22 @@
+/*
+ * Variables. Some of them are just the values used in Bootstrap.
+ * Bootstrap 3 is written in Less, though there is a port to Sass. Here I use
+ * the CSS version. Bootstrap 4 has moved to Sass.
+ */
+$screen-md-min: 768px;
+
+
+/*
+ * Navbar
+ */
+.navbar-brand img {
+    width: 35%;
+}
+
+body { padding-top: 100px; }
+
+@media (min-width: $screen-md-min) {
+    .navbar-nav > li > a {
+        line-height: 50px;
+    }
+}
