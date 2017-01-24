@@ -1,13 +1,10 @@
 $black: #212121;
+$grey: #cacaca;
+$blue: #0275d8;
 
 body {
-	margin: 0;
-    // Typo
-    color: $black;
-    font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.02em;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 h2 {
@@ -26,49 +23,83 @@ h2 {
     flex: 1;
 }
 
+#page {
+    transition: transform 0.5s;
+}
+
+#page.sidebar-closed {
+    transform: translateX(-10em);
+}
+
 /*
- * Base
+ * Sidebar
  */
 #sidebar {
     flex: 0 0 12em;
     background-color: $black;
     padding-top: 1em;
-    color: white;
+    color: $grey;
+    position: relative;
     ul {
         list-style: none;
     }
     a {
-        color: white;
+        color: $grey;
+        text-decoration: none;
+        &:hover {
+            color: $blue;
+        }
     }
-
+    #sidebar-hide, #sidebar-show {
+        position: absolute;
+        top: .5m;
+        right: .5em;
+        cursor: pointer;
+    }
     #logo {
         display: flex;
         justify-content: center;
         a {
             background-image: url('/static/img/david.png');
+            background-repeat: no-repeat;
             background-size: 100%;
             width: 120px;
             height: 120px;
+            margin-bottom: 1em;
         }
     }
 }
 
+#page {
+    #sidebar-hide { display: initial; }
+    #sidebar-show { display: none; }
+}
+
+#page.sidebar-closed {
+    #sidebar-hide { display: none; }
+    #sidebar-show { display: initial; }
+}
+
+/*
+ * Content
+ */
 #content {
     padding: 1em;
 }
 
 /*
- * Blog
- */
 .blog-post-item {
     hr {
         margin: 3em 0 2em;
     }
 }
+*/
 a.blog-post-link {
-	color: $black;
-	text-decoration: none;
-	&:hover {
+    color: $black;
+    text-decoration: none;
+/*
+    &:hover {
         color: rgb(0, 0, 238);
     }
+*/
 }

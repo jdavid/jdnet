@@ -9,6 +9,8 @@
   <title>{% block title %}{% endblock %}</title>
 
   <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'vendor/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap-4.0.0-alpha.6/css/bootstrap.min.css' %}">
   {% compress css %}
   <link href="{% static 'css/main.scss' %}" rel="stylesheet" type="text/x-scss">
   {% endcompress %}
@@ -17,10 +19,12 @@
 
 <body>
   <!-- Sidebar -->
-  <div class="flex-grid">
+  <div class="flex-grid" id="page">
     <div class="col" id="sidebar">
+      <i id="sidebar-hide" class="fa fa-close fa-lg"></i>
+      <i id="sidebar-show" class="fa fa-chevron-right fa-lg"></i>
       <div id="logo">
-        <a class="navbar-brand" href="/" title="David Ibáñez"></a>
+        <a href="/" title="David Ibáñez"></a>
       </div>
       <!-- Main links -->
       <ul>
@@ -30,12 +34,13 @@
       <ul>
         <li>Categories:</li>
         {% for cat in all_categories %}
-           <li><a href="{% url 'blog:category' cat.slug %}">{{ cat.name }}</a></li>
+        <li><a href="{% url 'blog:category' cat.slug %}">{{ cat.name }}</a></li>
         {% endfor %}
       </ul>
     </div>
+
+    <!-- Content -->
     <div class="col" id="content">
-      <button id="sidebar-toggle">X</button>
       {% block content %}
       {% endblock %}
     </div>
@@ -43,6 +48,8 @@
 
   <!-- Javascript -->
   <script src="{% static 'vendor/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'vendor/tether-1.4.0.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-4.0.0-alpha.6/js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
 </body>
 
