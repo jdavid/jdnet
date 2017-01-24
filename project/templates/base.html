@@ -20,12 +20,18 @@
   <div class="flex-grid">
     <div class="col" id="sidebar">
       <div id="logo">
-        <a class="navbar-brand" href="/">
-          <img src="{% static 'img/david.png' %}" alt="David Ibáñez">
-        </a>
+        <a class="navbar-brand" href="/" title="David Ibáñez"></a>
       </div>
+      <!-- Main links -->
       <ul>
         <li><a href="/blog">Blog</a></li>
+      </ul>
+      <!-- Categories -->
+      <ul>
+        <li>Categories:</li>
+        {% for cat in all_categories %}
+           <li><a href="{% url 'blog:category' cat.slug %}">{{ cat.name }}</a></li>
+        {% endfor %}
       </ul>
     </div>
     <div class="col" id="content">

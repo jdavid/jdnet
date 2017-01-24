@@ -17,6 +17,7 @@
         {% for blog in blogs %}
             <div class="blog-post-item{% if forloop.first and not category and not tag %} first-reset{% endif %}">
                 {% include 'blog/blog_post.html' with include_context="index_page" %}
+                <hr>
             </div>
         {% endfor %}
 

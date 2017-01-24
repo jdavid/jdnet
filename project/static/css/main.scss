@@ -1,6 +1,5 @@
 $black: #212121;
 
-
 body {
 	margin: 0;
     // Typo
@@ -11,13 +10,25 @@ body {
     letter-spacing: 0.02em;
 }
 
+h2 {
+    margin-bottom: 0;
+}
+
+.date, .tags {
+    font-style: italic;
+}
+
 .flex-grid {
     display: flex;
+    min-height: 100vh;
 }
 .col {
     flex: 1;
 }
 
+/*
+ * Base
+ */
 #sidebar {
     flex: 0 0 12em;
     background-color: $black;
@@ -29,25 +40,35 @@ body {
     a {
         color: white;
     }
-}
-#content {
-    padding: 1em;
-	a.blog-post-link {
-		color: $black;
-		text-decoration: none;
-		&:hover {
-            color: rgb(0, 0, 238);
+
+    #logo {
+        display: flex;
+        justify-content: center;
+        a {
+            background-image: url('/static/img/david.png');
+            background-size: 100%;
+            width: 120px;
+            height: 120px;
         }
-	}
+    }
 }
 
-#logo {
-    display: flex;
-    justify-content: center;
-    a {
-        width: 70%;
-        img {
-            width: 100%;
-        }
+#content {
+    padding: 1em;
+}
+
+/*
+ * Blog
+ */
+.blog-post-item {
+    hr {
+        margin: 3em 0 2em;
+    }
+}
+a.blog-post-link {
+	color: $black;
+	text-decoration: none;
+	&:hover {
+        color: rgb(0, 0, 238);
     }
 }
