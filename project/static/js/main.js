@@ -1,7 +1,7 @@
 $('#sidebar-hide').click(function() {
-    $('#page').toggleClass('sidebar-closed');
+    $('#wrapper').toggleClass('sidebar-open');
 });
 
 $('#sidebar-show').click(function() {
-    $('#page').toggleClass('sidebar-closed');
+    $('#wrapper').toggleClass('sidebar-open');
 });

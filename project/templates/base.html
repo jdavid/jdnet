@@ -18,14 +18,10 @@
 </head>
 
 <body>
-  <!-- Sidebar -->
-  <div class="flex-grid" id="page">
-    <div class="col" id="sidebar">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar">
       <i id="sidebar-hide" class="fa fa-close fa-lg"></i>
-      <i id="sidebar-show" class="fa fa-chevron-right fa-lg"></i>
-      <div id="logo">
-        <a href="/" title="David Ibáñez"></a>
-      </div>
       <!-- Main links -->
       <ul>
         <li><a href="/blog">Blog</a></li>
@@ -38,11 +34,31 @@
         {% endfor %}
       </ul>
     </div>
-
-    <!-- Content -->
-    <div class="col" id="content">
-      {% block content %}
-      {% endblock %}
+    <!-- Page -->
+    <div id="page">
+      <div class="container-fluid" id="nav">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="sidebar-show"><i class="fa fa-bars fa-lg"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="container-fluid" id="header">
+        <div class="row justify-content-center">
+            <img src="{% static 'img/david.png' %}" id="logo" title="David Ibáñez">
+        </div>
+        <div class="row justify-content-center">
+            <h1 class="tagline">Python Ninja for Hire</h1>
+        </div>
+      </div>
+      <div class="container" id="content">
+        <div class="row justify-content-center">
+          <div class="col">
+          {% block content %}
+          {% endblock %}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
