@@ -1,4 +1,4 @@
-$black: #212121;
+$black: #292b2c;
 $grey: #cacaca;
 $blue: #0275d8;
 $sidebar-width: 200px;
@@ -6,6 +6,40 @@ $white: #eee;
 
 body {
     overflow-x: hidden;
+    font-size: 18px;
+    // https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+    // https://css-tricks.com/snippets/css/system-font-stack/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    /*
+    system-ui		CSS4 standard, Chrome >= 56
+    -apple-system	Safari (Mac)
+    BlinkMacSystemFont  Chrome < 56 (Mac)
+    "Segoe UI"		Windows >= Vista
+    "Roboto"		Android
+    "Oxygen"		KDE
+    "Ubuntu"		Ubuntu
+    "Cantarell"		Gnome
+    "Lucida Grande"     OSX < Yosemite
+    "Fira Sans"		Firefox OS
+    "Droid Sans"        Android old
+    "Helvetica Neue"	iOS < 9 ; OSX < El Capitan
+    ** Classical **
+    Arial		Windows old
+    Helvetica		Unix, Mac
+    sans-serif
+    */
+}
+
+h1 { font-size: 48px; }
+h2 { font-size: 40px; }
+h3 { font-size: 32px; }
+h4 { font-size: 28px; }
+h5 { font-size: 24px; }
+h6 { font-size: 18px; }
+h2 {
+    color: $black;
+    xmargin-bottom: 0;
 }
 
 #wrapper {
@@ -42,9 +76,13 @@ body {
 }
 
 #nav {
-    position: fixed;
-    top: 0;
     z-index: 50;
+    background-color: #66ccff;
+    padding: 15px;
+    color: $white;
+    a {
+        color: $white;
+    }
 }
 
 #header {
@@ -65,10 +103,6 @@ body {
     padding-top: 3em;
 }
 
-
-h2 {
-    margin-bottom: 0;
-}
 
 .date, .tags {
     font-style: italic;

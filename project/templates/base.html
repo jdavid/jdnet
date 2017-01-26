@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{% endblock %}</title>
 
+
   <!-- CSS -->
   <link rel="stylesheet" href="{% static 'vendor/font-awesome-4.7.0/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'vendor/bootstrap-4.0.0-alpha.6/css/bootstrap.min.css' %}">
@@ -36,12 +37,24 @@
     </div>
     <!-- Page -->
     <div id="page">
-      <div class="container-fluid" id="nav">
-        <ul class="nav">
-          <li class="nav-item">
-            <a href="#" class="nav-link" id="sidebar-show"><i class="fa fa-bars fa-lg"></i></a>
-          </li>
-        </ul>
+
+      <div class="container-fluid fixed-top" id="nav">
+        <div class="row">
+          <div class="col">
+            <ul class="nav xpull-right">
+              <a class="nav-item nav-link" href="#" id="sidebar-show"><i class="fa fa-bars fa-lg"></i></a>
+              <a class="nav-item nav-link nav-collapse" href="/blog">Blog</a>
+              <a class="nav-item nav-link nav-collapse" href="#">Portfolio</a>
+              <a class="nav-item nav-link nav-collapse" href="#">Contact</a>
+            </ul>
+          </div>
+          <div class="col">
+            <form class="form-inline pull-right">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
       </div>
       <div class="container-fluid" id="header">
         <div class="row justify-content-center">
