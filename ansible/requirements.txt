@@ -2,7 +2,7 @@ Pillow==3.4.2
 pip==9.0.1
 
 # Django
-Django==1.10.4
+Django==1.10.8
 #django-crispy-forms==1.6.1
 django-debug-toolbar==1.7
 django-sendfile==0.3.11
