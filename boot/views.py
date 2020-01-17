@@ -1,19 +1,19 @@
-# Import from the Standard Library
+# Standard Library
 import os
 
-# Import from Django
+# Django
 from django.conf import settings
 from django.http import Http404
 from django.views.generic import View
 
-# Import ..
-from sendfile import sendfile
+# Requirements
+from django_sendfile import sendfile
 
 
 class SendfileView(View):
 
     def get(self, request, **kwargs):
-        if request.user.is_anonymous():
+        if request.user.is_anonymous:
             raise Http404
 
         path = kwargs['path']
