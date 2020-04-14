@@ -8,7 +8,7 @@ pip==20.0.2
 # Wagtail
 django-compressor==2.1
 django-libsass==0.7
-wagtail==1.9
+wagtail==2.7.2
 
 {% if django_database.engine == 'postgres' %}
 psycopg2==2.8.4
