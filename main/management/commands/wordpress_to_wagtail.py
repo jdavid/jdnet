@@ -18,8 +18,8 @@ from django.contrib.auth import get_user_model
 from django.utils.html import linebreaks
 
 # Wagtail
-from wagtail.wagtailcore.models import Site
-from wagtail.wagtailimages.models import Image
+from wagtail.core.models import Site
+from wagtail.images.models import Image
 
 # Project
 from main.models import Index, Page

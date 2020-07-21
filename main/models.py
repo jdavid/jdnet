@@ -1,7 +1,7 @@
 # Wagtail
-from wagtail.wagtailcore import models
-from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from wagtail.core import models
+from wagtail.core.fields import RichTextField
+from wagtail.admin.edit_handlers import FieldPanel
 
 
 class Index(models.Page):
