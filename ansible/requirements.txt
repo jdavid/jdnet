@@ -14,5 +14,5 @@ pymemcache==3.5.0
 
 # Wagtail
 django-compressor==2.4.1
-django-libsass==0.8
-wagtail==2.13.1
+django-libsass==0.9
+wagtail==2.14.1
