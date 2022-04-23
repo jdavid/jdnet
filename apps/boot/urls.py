@@ -7,5 +7,4 @@ from . import views
 
 urlpatterns = [
     path('sendfile/<path>', views.SendfileView.as_view(), name='sendfile'),
-    path('svelte/hello/<name>', views.SvelteHelloView.as_view()),
 ]
